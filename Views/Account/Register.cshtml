@@ -1,0 +1,58 @@
+@model WatchesStore.Models.ViewModels.RegisterViewModel
+
+@{
+    ViewData["Title"] = "Create Account";
+}
+
+<section class="auth-section">
+    <div class="container">
+        <div class="auth-card">
+
+            <p class="auth-subtitle">JOIN US</p>
+            <h1>Create Account</h1>
+
+            <form asp-controller="Account" asp-action="Register" method="post" novalidate>
+                <div asp-validation-summary="ModelOnly" class="auth-summary"></div>
+
+                <div class="mb-3">
+                    <label asp-for="FullName" class="form-label"></label>
+                    <input asp-for="FullName" class="form-control" autocomplete="name" />
+                    <span asp-validation-for="FullName" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Email" class="form-label"></label>
+                    <input asp-for="Email" class="form-control" autocomplete="email" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Password" class="form-label"></label>
+                    <input asp-for="Password" class="form-control" autocomplete="new-password" />
+                    <small class="form-text text-muted">
+                        At least 8 characters, with an uppercase letter, a lowercase letter, and a number.
+                    </small>
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="ConfirmPassword" class="form-label"></label>
+                    <input asp-for="ConfirmPassword" class="form-control" autocomplete="new-password" />
+                    <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                </div>
+
+                <button type="submit" class="auth-button">Create Account</button>
+            </form>
+
+            <p class="auth-switch">
+                Already have an account?
+                <a asp-controller="Account" asp-action="Login">Sign in</a>
+            </p>
+
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

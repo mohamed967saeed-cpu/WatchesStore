@@ -1,0 +1,623 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f7f5f0;
+    color: #222;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* =========================
+   NAVBAR
+   ========================= */
+
+.navbar {
+    padding: 18px 0;
+    background-color: #111 !important;
+}
+
+.navbar-brand {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.navbar .nav-link {
+    color: #fff !important;
+    margin-left: 20px;
+    transition: 0.3s;
+}
+
+    .navbar .nav-link:hover {
+        color: #c9a45c !important;
+    }
+
+
+/* =========================
+   HERO
+   ========================= */
+
+.hero-section {
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    background: linear-gradient( 120deg, #111 0%, #222 55%, #3a3022 100% );
+    color: white;
+}
+
+.hero-content {
+    max-width: 700px;
+    padding: 70px 0;
+}
+
+.hero-subtitle {
+    color: #c9a45c;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.hero-content h1 {
+    font-size: 64px;
+    line-height: 1.1;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+.hero-description {
+    color: #ddd;
+    font-size: 18px;
+    line-height: 1.8;
+    max-width: 580px;
+    margin-bottom: 35px;
+}
+
+.hero-button {
+    display: inline-block;
+    padding: 14px 30px;
+    background-color: #c9a45c;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+    .hero-button:hover {
+        background-color: #b18d48;
+        color: white;
+        transform: translateY(-2px);
+    }
+
+
+/* =========================
+   WATCHES SECTION
+   ========================= */
+
+.watches-section {
+    padding: 90px 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+    .section-title p {
+        color: #c9a45c;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 3px;
+        margin-bottom: 10px;
+    }
+
+    .section-title h2 {
+        font-size: 42px;
+        font-weight: 700;
+        margin-bottom: 15px;
+    }
+
+    .section-title span {
+        color: #777;
+    }
+
+
+/* =========================
+   WATCH CARD
+   ========================= */
+
+.watch-card {
+    height: 100%;
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #e8e5df;
+    transition: all 0.3s ease;
+}
+
+    .watch-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.10);
+    }
+
+.watch-image {
+    height: 330px;
+    background-color: #f0eee9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+    .watch-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+    }
+
+.watch-card:hover .watch-image img {
+    transform: scale(1.05);
+}
+
+
+/* =========================
+   WATCH INFO
+   ========================= */
+
+.watch-info {
+    padding: 25px;
+}
+
+.watch-brand {
+    color: #c9a45c;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.watch-info h3 {
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.watch-description {
+    color: #777;
+    line-height: 1.6;
+    min-height: 50px;
+}
+
+.watch-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.watch-price {
+    font-size: 20px;
+    font-weight: 700;
+    color: #222;
+    margin: 0;
+}
+
+.available,
+.not-available {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.available {
+    background-color: #e6f5eb;
+    color: #198754;
+}
+
+.not-available {
+    background-color: #f9e5e5;
+    color: #dc3545;
+}
+
+
+/* =========================
+   DETAILS BUTTON
+   ========================= */
+
+.details-button {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 12px;
+    margin-top: 20px;
+    background-color: #111;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+    .details-button:hover {
+        background-color: #c9a45c;
+        color: white;
+    }
+
+
+/* =========================
+   FOOTER
+   ========================= */
+
+footer {
+    background-color: #111;
+    color: #aaa;
+    padding: 25px 0;
+    margin-top: 0 !important;
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 768px) {
+
+    .hero-section {
+        min-height: 500px;
+    }
+
+    .hero-content {
+        padding: 50px 20px;
+    }
+
+        .hero-content h1 {
+            font-size: 42px;
+        }
+
+    .hero-description {
+        font-size: 16px;
+    }
+
+    .section-title h2 {
+        font-size: 32px;
+    }
+
+    .watch-image {
+        height: 280px;
+    }
+
+    .watch-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+/* =========================
+   WATCH DETAILS PAGE
+   ========================= */
+
+.details-section {
+    padding: 70px 0;
+    min-height: 80vh;
+    background-color: #f7f5f0;
+}
+
+.back-button {
+    display: inline-block;
+    margin-bottom: 30px;
+    color: #222;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+    .back-button:hover {
+        color: #c9a45c;
+    }
+
+.details-card {
+    background-color: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: 1px solid #e8e5df;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+.details-image-box {
+    min-height: 550px;
+    background-color: #f0eee9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+}
+
+.details-image {
+    width: 100%;
+    height: 100%;
+    max-height: 550px;
+    object-fit: contain;
+}
+
+.details-content {
+    padding: 55px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.details-brand {
+    color: #c9a45c;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.details-content h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #161616;
+}
+
+.details-price {
+    font-size: 28px;
+    font-weight: 700;
+    color: #161616;
+    margin-bottom: 20px;
+}
+
+.details-content .available,
+.details-content .not-available {
+    display: inline-block;
+    width: fit-content;
+    margin-bottom: 10px;
+}
+
+.details-info {
+    margin-top: 25px;
+}
+
+    .details-info h4 {
+        font-size: 18px;
+        font-weight: 700;
+        margin-top: 22px;
+        margin-bottom: 8px;
+        color: #222;
+    }
+
+    .details-info p {
+        color: #777;
+        line-height: 1.8;
+        margin-bottom: 0;
+    }
+
+.contact-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.whatsapp-button,
+.facebook-button {
+    padding: 13px 22px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.whatsapp-button {
+    background-color: #198754;
+}
+
+.facebook-button {
+    background-color: #1877f2;
+}
+
+    .whatsapp-button:hover,
+    .facebook-button:hover {
+        color: white;
+        opacity: 0.9;
+        transform: translateY(-2px);
+    }
+
+@media (max-width: 768px) {
+
+    .details-section {
+        padding: 40px 0;
+    }
+
+    .details-card {
+        grid-template-columns: 1fr;
+    }
+
+    .details-image-box {
+        min-height: 400px;
+    }
+
+    .details-content {
+        padding: 30px;
+    }
+
+        .details-content h1 {
+            font-size: 36px;
+        }
+
+    .contact-buttons {
+        flex-direction: column;
+    }
+}
+/* =========================
+   AUTH PAGES (Login / Register / Profile / Access Denied)
+   ========================= */
+
+.nav-logout-form {
+    display: inline;
+}
+
+.nav-logout-button {
+    background: none;
+    border: none;
+    padding: 0;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.auth-section {
+    padding: 90px 0;
+    min-height: 70vh;
+    background-color: #f7f5f0;
+    display: flex;
+    align-items: center;
+}
+
+.auth-card {
+    max-width: 480px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 16px;
+    border: 1px solid #e8e5df;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+    padding: 50px;
+}
+
+.auth-card-center {
+    text-align: center;
+}
+
+.auth-subtitle {
+    color: #c9a45c;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+.auth-card h1 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #161616;
+}
+
+.auth-card .form-label {
+    font-weight: 600;
+    color: #222;
+}
+
+.auth-card .form-control {
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    padding: 10px 14px;
+}
+
+    .auth-card .form-control:focus {
+        border-color: #c9a45c;
+        box-shadow: 0 0 0 0.2rem rgba(201, 164, 92, 0.25);
+    }
+
+.auth-summary ul {
+    margin-bottom: 15px;
+    padding-left: 18px;
+    color: #dc3545;
+}
+
+.auth-button {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 12px;
+    margin-top: 10px;
+    background-color: #111;
+    color: white;
+    border: none;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+    .auth-button:hover {
+        background-color: #c9a45c;
+        color: white;
+    }
+
+.auth-button-outline {
+    background-color: transparent;
+    color: #111;
+    border: 1px solid #111;
+}
+
+    .auth-button-outline:hover {
+        background-color: #111;
+        color: white;
+    }
+
+.auth-button-link {
+    display: inline-block;
+    width: auto;
+    padding: 12px 30px;
+}
+
+.auth-switch {
+    text-align: center;
+    margin-top: 20px;
+    color: #777;
+}
+
+    .auth-switch a {
+        color: #c9a45c;
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+        .auth-switch a:hover {
+            text-decoration: underline;
+        }
+
+.auth-text {
+    color: #777;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.profile-info {
+    text-align: left;
+    margin: 25px 0;
+}
+
+.profile-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.profile-label {
+    color: #777;
+    font-weight: 600;
+}

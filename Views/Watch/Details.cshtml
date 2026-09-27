@@ -1,0 +1,97 @@
+﻿@model WatchesStore.Models.Watch
+
+@{
+    ViewData["Title"] = "Watch Details";
+}
+
+<div class="container mt-4">
+
+    <h1>Watch Details</h1>
+    <hr />
+
+    <div class="row">
+
+        <div class="col-md-4">
+
+            @if (!string.IsNullOrEmpty(Model.ImageUrl))
+            {
+                <img src="@Model.ImageUrl"
+                     alt="@Model.Model"
+                     class="img-fluid rounded" />
+            }
+            else
+            {
+                <div class="alert alert-secondary">
+                    No Image
+                </div>
+            }
+
+        </div>
+
+        <div class="col-md-8">
+
+            <h2>@Model.Model</h2>
+
+            <p>
+                <strong>Brand:</strong>
+                @(Model.Brand?.BrandName ?? "N/A")
+            </p>
+
+            <p>
+                <strong>Description:</strong>
+                @Model.Description
+            </p>
+
+            <p>
+                <strong>Specifications:</strong>
+                @Model.Specifications
+            </p>
+
+            <p>
+                <strong>Price:</strong>
+                @Model.Price.ToString("0.00")
+            </p>
+
+            <p>
+                <strong>Availability:</strong>
+
+                @if (Model.IsAvailable)
+                {
+                    <span class="badge bg-success">
+                        Available
+                    </span>
+                }
+                else
+                {
+                    <span class="badge bg-danger">
+                        Not Available
+                    </span>
+                }
+            </p>
+
+            <div class="mt-3">
+
+                <a asp-action="Edit"
+                   asp-route-id="@Model.WatchId"
+                   class="btn btn-warning">
+                    Edit
+                </a>
+
+                <a asp-action="ChangeAvailability"
+                   asp-route-id="@Model.WatchId"
+                   class="btn btn-secondary">
+                    Change Availability
+                </a>
+
+                <a asp-action="Index"
+                   class="btn btn-primary">
+                    Back
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

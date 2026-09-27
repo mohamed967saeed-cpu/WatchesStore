@@ -1,0 +1,100 @@
+﻿@model List<WatchesStore.Models.Watch>
+
+@{
+    ViewData["Title"] = "Watch Store";
+}
+
+<section class="hero-section">
+    <div class="container">
+        <div class="hero-content">
+            <p class="hero-subtitle">TIME FOR A BETTER TOMORROW</p>
+
+            <h1>Discover Your<br />Perfect Watch</h1>
+
+            <p class="hero-description">
+                Explore our collection of elegant and modern watches
+                designed for every occasion.
+            </p>
+
+            <a href="#watches" class="hero-button">Explore Collection</a>
+        </div>
+    </div>
+</section>
+
+<section class="watches-section" id="watches">
+    <div class="container">
+
+        <div class="section-title">
+            <p>OUR COLLECTION</p>
+            <h2>Featured Watches</h2>
+            <span>
+                Discover watches that combine style, quality and elegance.
+            </span>
+        </div>
+
+        <div class="row g-4">
+
+            @foreach (var watch in Model)
+            {
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="watch-card">
+
+                        <div class="watch-image">
+                            <img src="@watch.ImageUrl"
+                                 alt="@watch.Model" />
+                        </div>
+
+                        <div class="watch-info">
+
+                            <p class="watch-brand">
+                                @(watch.Brand?.BrandName ?? "Watch Brand")
+                            </p>
+
+                            <h3>@watch.Model</h3>
+
+                            <p class="watch-description">
+                                @watch.Description
+                            </p>
+
+                            <div class="watch-bottom">
+
+                                <span class="watch-price">
+                                    @watch.Price.ToString("N0") EGP
+                                </span>
+
+                                @if (watch.IsAvailable)
+                                {
+                                    <span class="available">
+                                        Available
+                                    </span>
+                                }
+                                else
+                                {
+                                    <span class="not-available">
+                                        Isn't Available
+                                    </span>
+                                }
+
+                            </div>
+
+                            <a
+                                asp-controller="Home"
+                               asp-action="Details"
+                               asp-route-id="@watch.WatchId"
+                               class="details-button">
+                                View Details
+                            </a>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+            }
+
+        </div>
+
+    </div>
+</section>

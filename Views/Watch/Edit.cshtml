@@ -1,0 +1,123 @@
+﻿@model WatchesStore.Models.Watch
+
+@{
+    ViewData["Title"] = "Edit Watch";
+}
+
+<div class="container mt-4">
+
+    <h1>Edit Watch</h1>
+    <hr />
+
+    <form asp-action="Edit" method="post">
+
+        <input type="hidden" asp-for="WatchId" />
+
+        <input type="hidden" asp-for="CreatedAt" />
+
+        <div asp-validation-summary="ModelOnly"
+             class="text-danger">
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Model"
+                   class="form-label">
+                Model
+            </label>
+
+            <input asp-for="Model"
+                   class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="BrandId"
+                   class="form-label">
+                Brand
+            </label>
+
+            <select asp-for="BrandId"
+                    asp-items="ViewBag.Brands"
+                    class="form-select">
+
+                <option value="">
+                    -- Select Brand --
+                </option>
+
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Description"
+                   class="form-label">
+                Description
+            </label>
+
+            <textarea asp-for="Description"
+                      class="form-control"
+                      rows="4"></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Specifications"
+                   class="form-label">
+                Specifications
+            </label>
+
+            <textarea asp-for="Specifications"
+                      class="form-control"
+                      rows="5"></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Price"
+                   class="form-label">
+                Price
+            </label>
+
+            <input asp-for="Price"
+                   type="number"
+                   step="0.01"
+                   class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="ImageUrl"
+                   class="form-label">
+                Image URL
+            </label>
+
+            <input asp-for="ImageUrl"
+                   class="form-control" />
+        </div>
+
+        <div class="form-check mb-3">
+
+            <input asp-for="IsAvailable"
+                   class="form-check-input" />
+
+            <label asp-for="IsAvailable"
+                   class="form-check-label">
+                Available
+            </label>
+
+        </div>
+
+        <button type="submit"
+                class="btn btn-success">
+            Save Changes
+        </button>
+
+        <a asp-action="Index"
+           class="btn btn-secondary">
+            Back
+        </a>
+
+    </form>
+
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

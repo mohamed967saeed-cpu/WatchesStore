@@ -1,0 +1,91 @@
+﻿@model WatchesStore.Models.Watch
+
+@{
+    ViewData["Title"] = "Watch Details";
+}
+
+<section class="details-section">
+
+    <div class="container">
+
+        <a asp-controller="Home"
+           asp-action="Index"
+           class="back-button">
+            ← Back to Watches
+        </a>
+
+        <div class="details-card">
+
+            <div class="details-image-box">
+
+                <img src="@Model.ImageUrl"
+                     alt="@Model.Model"
+                     class="details-image" />
+
+            </div>
+
+            <div class="details-content">
+
+                <p class="details-brand">
+                    @(Model.Brand?.BrandName ?? "Watch Brand")
+                </p>
+
+                <h1>
+                    @Model.Model
+                </h1>
+
+                <div class="details-price">
+                    @Model.Price.ToString("N0") EGP
+                </div>
+
+                @if (Model.IsAvailable)
+                {
+                    <span class="available">
+                        Available
+                    </span>
+                }
+                else
+                {
+                    <span class="not-available">
+                        Isn't Available
+                    </span>
+                }
+
+                <div class="details-info">
+
+                    <h4>Description</h4>
+
+                    <p>
+                        @Model.Description
+                    </p>
+
+                    <h4>Specifications</h4>
+
+                    <p>
+                        @Model.Specifications
+                    </p>
+
+                </div>
+
+                <div class="contact-buttons">
+
+                    <a href="https://wa.me/+201060597216"
+                       target="_blank"
+                       class="whatsapp-button">
+                        Contact via WhatsApp
+                    </a>
+
+                    <a href="https://www.facebook.com/groups/2163656983899650/"
+                       class="facebook-button">
+                        Facebook
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>

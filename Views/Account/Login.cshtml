@@ -1,0 +1,50 @@
+@model WatchesStore.Models.ViewModels.LoginViewModel
+
+@{
+    ViewData["Title"] = "Sign In";
+}
+
+<section class="auth-section">
+    <div class="container">
+        <div class="auth-card">
+
+            <p class="auth-subtitle">WELCOME BACK</p>
+            <h1>Sign In</h1>
+
+            <form asp-controller="Account" asp-action="Login"
+                  asp-route-returnUrl="@ViewData["ReturnUrl"]"
+                  method="post" novalidate>
+                <div asp-validation-summary="ModelOnly" class="auth-summary"></div>
+
+                <div class="mb-3">
+                    <label asp-for="Email" class="form-label"></label>
+                    <input asp-for="Email" class="form-control" autocomplete="email" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Password" class="form-label"></label>
+                    <input asp-for="Password" class="form-control" autocomplete="current-password" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3 form-check">
+                    <input asp-for="RememberMe" class="form-check-input" />
+                    <label asp-for="RememberMe" class="form-check-label"></label>
+                </div>
+
+                <button type="submit" class="auth-button">Sign In</button>
+            </form>
+
+            <p class="auth-switch">
+                Don't have an account?
+                <a asp-controller="Account" asp-action="Register">Create one</a>
+            </p>
+
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
